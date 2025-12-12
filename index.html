@@ -2,16 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>The CLAIM Program – Rebuild Self-Trust & Start Living Again</title>
+  <title>Break Isolation & Rebuild Your Social Life – The CLAIM Program</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="The CLAIM Program – an 8-week 1:1 transformation to rebuild self-trust, break numbness, and start living your life again."
+    content="An 8-week 1:1 program for isolated young adults who are stuck in their head, numb, and ashamed of their social life – to break isolation, rebuild self-trust, and actually re-enter life again."
+  />
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
   />
   <style>
-    /* -----------------------
-       Base Reset & Typography
-    ------------------------ */
+    :root {
+      --bg: #050712;
+      --bg-soft: #0b1020;
+      --accent: #f97316;
+      --accent-soft: #facc15;
+      --text-main: #f9fafb;
+      --text-sub: #d1d5e5;
+      --text-muted: #9ca3af;
+      --border-subtle: rgba(148, 163, 184, 0.35);
+      --card-bg: rgba(15, 23, 42, 0.92);
+    }
+
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -19,16 +35,10 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
-      color: #0b1020;
-      background: #050712;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
+      color: var(--text-main);
+      background: radial-gradient(circle at top left, #151b38 0, #050712 45%, #020308 100%);
     }
 
     a {
@@ -36,68 +46,72 @@
       color: inherit;
     }
 
-    /* -----------------------
-       Layout Helpers
-    ------------------------ */
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     .page {
       min-height: 100vh;
-      background: radial-gradient(circle at top left, #151b38 0, #050712 45%, #020308 100%);
-      color: #f5f5f7;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at top left, rgba(94, 234, 212, 0.18), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(251, 191, 36, 0.16), transparent 55%),
+        var(--bg);
     }
 
     .container {
       width: 100%;
-      max-width: 1080px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
     section {
       padding: 4rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.6);
     }
 
-    @media (min-width: 900px) {
+    @media (min-width: 960px) {
       section {
         padding: 5rem 0;
       }
     }
 
     .section-label {
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #9ea4c7;
-      margin-bottom: 0.5rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
     }
 
     .section-heading {
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 1.5rem;
-      color: #f9fafb;
+      color: var(--text-main);
     }
 
     .section-subheading {
-      font-size: 1.1rem;
-      color: #d1d5e5;
+      font-size: 1.05rem;
+      color: var(--text-sub);
       margin-bottom: 1rem;
     }
 
     p {
       margin-bottom: 1rem;
-      color: #d1d5e5;
+      color: var(--text-sub);
     }
 
     ul {
       margin-left: 1.25rem;
-      margin-top: 0.5rem;
       margin-bottom: 1rem;
-      color: #d1d5e5;
+      color: var(--text-sub);
     }
 
     li {
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.45rem;
     }
 
     strong {
@@ -105,30 +119,29 @@
       font-weight: 600;
     }
 
-    /* -----------------------
-       Header & Nav
-    ------------------------ */
+    /* HEADER */
+
     header {
       position: sticky;
       top: 0;
-      z-index: 30;
+      z-index: 40;
       backdrop-filter: blur(16px);
-      background: linear-gradient(to bottom, rgba(5, 7, 18, 0.92), rgba(5, 7, 18, 0.75));
-      border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+      background: linear-gradient(to bottom, rgba(5, 7, 18, 0.94), rgba(5, 7, 18, 0.8));
+      border-bottom: 1px solid rgba(148, 163, 184, 0.35);
     }
 
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.9rem 0;
+      padding: 0.85rem 0;
     }
 
     .logo {
       font-weight: 700;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: #e5e7eb;
     }
 
@@ -136,12 +149,12 @@
       display: flex;
       align-items: center;
       gap: 1.2rem;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
     }
 
     .nav-links a {
       color: #cbd5f5;
-      opacity: 0.85;
+      opacity: 0.86;
     }
 
     .nav-links a:hover {
@@ -149,38 +162,34 @@
     }
 
     .nav-cta {
-      padding: 0.5rem 1rem;
+      padding: 0.55rem 1.15rem;
       border-radius: 999px;
-      background: linear-gradient(135deg, #f97316, #facc15);
+      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
       color: #111827;
       font-weight: 600;
       font-size: 0.9rem;
-      box-shadow: 0 10px 30px rgba(248, 181, 44, 0.4);
+      box-shadow: 0 16px 35px rgba(248, 181, 44, 0.5);
       white-space: nowrap;
     }
 
-    @media (max-width: 720px) {
-      .nav-links {
-        gap: 0.8rem;
-      }
+    @media (max-width: 768px) {
       .nav-links a:not(.nav-cta) {
         display: none;
       }
     }
 
-    /* -----------------------
-       Hero Section
-    ------------------------ */
+    /* HERO */
+
     .hero {
       padding-top: 4rem;
     }
 
     .hero-grid {
       display: grid;
-      gap: 2.5rem;
+      gap: 2.7rem;
     }
 
-    @media (min-width: 900px) {
+    @media (min-width: 960px) {
       .hero-grid {
         grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
         align-items: center;
@@ -190,11 +199,11 @@
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.45rem;
       font-size: 0.8rem;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #9ca3af;
+      color: var(--text-muted);
       margin-bottom: 0.9rem;
     }
 
@@ -202,151 +211,130 @@
       width: 8px;
       height: 8px;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #facc15, #f97316);
-      box-shadow: 0 0 15px rgba(250, 204, 21, 0.8);
+      background: radial-gradient(circle at 30% 20%, var(--accent-soft), var(--accent));
+      box-shadow: 0 0 18px rgba(250, 204, 21, 0.9);
     }
 
     .hero-title {
-      font-size: 2.4rem;
-      line-height: 1.1;
+      font-size: 2.5rem;
+      line-height: 1.08;
       font-weight: 800;
       margin-bottom: 1rem;
-      color: #f9fafb;
+      color: var(--text-main);
     }
 
-    @media (min-width: 900px) {
+    @media (min-width: 960px) {
       .hero-title {
-        font-size: 3rem;
+        font-size: 3.1rem;
       }
     }
 
+    .hero-title span {
+      display: inline-block;
+      background: linear-gradient(to right, #f97316, #fde68a);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
     .hero-subtitle {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: #e5e7eb;
-      margin-bottom: 1rem;
+      margin-bottom: 0.9rem;
     }
 
     .hero-body {
-      color: #cbd5f5;
-      margin-bottom: 1.5rem;
+      color: var(--text-sub);
+      margin-bottom: 1.3rem;
+      font-size: 0.98rem;
     }
 
     .hero-highlight {
       font-size: 0.95rem;
-      background: rgba(15, 23, 42, 0.9);
-      border-radius: 0.8rem;
-      padding: 0.9rem 1rem;
-      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.92);
+      border-radius: 0.9rem;
+      padding: 0.95rem 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.8);
       color: #e5e7eb;
     }
 
-    .hero-highlight strong {
-      color: #fbbf24;
-    }
-
     .hero-actions {
-      margin-top: 1.8rem;
+      margin-top: 1.9rem;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 1rem;
+      gap: 1.1rem;
     }
 
     .btn-primary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.9rem 1.8rem;
+      gap: 0.5rem;
+      padding: 0.95rem 1.9rem;
       border-radius: 999px;
-      background: linear-gradient(135deg, #f97316, #facc15);
+      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
       color: #111827;
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 0.98rem;
       border: none;
       cursor: pointer;
-      box-shadow: 0 18px 45px rgba(248, 181, 44, 0.4);
-      transition: transform 0.12s ease, box-shadow 0.12s ease;
+      box-shadow: 0 20px 48px rgba(248, 181, 44, 0.55);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, translate 0.12s ease;
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 22px 50px rgba(248, 181, 44, 0.5);
+      box-shadow: 0 26px 60px rgba(248, 181, 44, 0.6);
     }
 
     .btn-secondary-text {
-      font-size: 0.85rem;
-      color: #9ca3af;
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      max-width: 240px;
     }
 
     .hero-aside {
-      border-radius: 1.5rem;
-      background: radial-gradient(circle at top, rgba(248, 250, 252, 0.02), rgba(15, 23, 42, 0.96));
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      padding: 1.8rem 1.6rem;
+      border-radius: 1.6rem;
+      background:
+        radial-gradient(circle at top, rgba(248, 250, 252, 0.03), transparent 60%),
+        var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      padding: 1.9rem 1.6rem;
       box-shadow:
-        0 22px 45px rgba(15, 23, 42, 0.8),
-        0 0 50px rgba(56, 189, 248, 0.08);
+        0 26px 55px rgba(15, 23, 42, 0.9),
+        0 0 60px rgba(56, 189, 248, 0.08);
+      position: relative;
+      overflow: hidden;
     }
 
-    .hero-aside-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.7rem;
-      color: #f9fafb;
+    .hero-aside::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at top, rgba(59, 130, 246, 0.08), transparent 55%);
+      opacity: 0.8;
+      pointer-events: none;
     }
 
-    .hero-aside-body {
-      font-size: 0.95rem;
-      color: #d1d5e5;
-      margin-bottom: 0.9rem;
+    .hero-aside-inner {
+      position: relative;
+      z-index: 1;
     }
 
-    .hero-aside-note {
-      font-size: 0.8rem;
-      color: #9ca3af;
-    }
-
-    /* -----------------------
-       Split Layout Sections
-    ------------------------ */
-    .two-col {
-      display: grid;
-      gap: 1.8rem;
-    }
-
-    @media (min-width: 900px) {
-      .two-col {
-        grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-        gap: 3.5rem;
-      }
-    }
-
-    .pill-list {
-      background: rgba(15, 23, 42, 0.7);
-      border-radius: 1rem;
-      padding: 1.3rem 1.2rem;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-    }
-
-    .pill-list li::marker {
-      color: #facc15;
-    }
-
-    /* -----------------------
-       Cards & Tags
-    ------------------------ */
     .pill-tag {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
       font-size: 0.75rem;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.09em;
       text-transform: uppercase;
-      padding: 0.25rem 0.7rem;
+      padding: 0.28rem 0.75rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      color: #9ca3af;
-      margin-bottom: 0.75rem;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+      background: rgba(15, 23, 42, 0.78);
     }
 
     .pill-tag-dot {
@@ -354,87 +342,124 @@
       height: 6px;
       border-radius: 999px;
       background: #22c55e;
-      box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+    }
+
+    .hero-aside-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      color: var(--text-main);
+    }
+
+    .hero-aside-body {
+      font-size: 0.93rem;
+      color: var(--text-sub);
+      margin-bottom: 0.95rem;
+    }
+
+    .hero-aside-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* UTILS */
+
+    .two-col {
+      display: grid;
+      gap: 1.9rem;
+    }
+
+    @media (min-width: 960px) {
+      .two-col {
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+        gap: 3.5rem;
+      }
+    }
+
+    .pill-list {
+      background: rgba(15, 23, 42, 0.88);
+      border-radius: 1rem;
+      padding: 1.3rem 1.2rem;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      box-shadow: 0 22px 50px rgba(15, 23, 42, 0.8);
+      font-size: 0.95rem;
+    }
+
+    .pill-list li::marker {
+      color: var(--accent-soft);
+    }
+
+    .two-col-lists {
+      display: grid;
+      gap: 2rem;
+    }
+
+    @media (min-width: 960px) {
+      .two-col-lists {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     .card {
-      background: rgba(15, 23, 42, 0.9);
+      background: var(--card-bg);
       border-radius: 1.2rem;
       padding: 1.5rem 1.4rem;
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 22px 50px rgba(15, 23, 42, 0.85);
+      font-size: 0.95rem;
     }
 
     .card-title {
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
       color: #f3f4f6;
+      font-size: 1rem;
     }
 
-    .card-subtitle {
-      font-size: 0.9rem;
-      color: #9ca3af;
-      margin-bottom: 0.8rem;
-    }
+    /* METHOD GRID */
 
-    /* -----------------------
-       Method Grid
-    ------------------------ */
     .method-grid {
       display: grid;
       gap: 1.5rem;
     }
 
-    @media (min-width: 900px) {
+    @media (min-width: 960px) {
       .method-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
       }
     }
 
     .method-step {
-      background: radial-gradient(circle at top, rgba(250, 204, 21, 0.05), rgba(15, 23, 42, 0.95));
+      background: radial-gradient(circle at top, rgba(250, 204, 21, 0.06), rgba(15, 23, 42, 0.96));
       border-radius: 1rem;
       padding: 1.2rem 1.1rem;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      font-size: 0.95rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 0.93rem;
     }
 
     .method-step h3 {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 0.5rem;
+      letter-spacing: 0.13em;
+      margin-bottom: 0.45rem;
       color: #f9fafb;
     }
 
     .method-step p {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       margin-bottom: 0.5rem;
     }
 
-    /* -----------------------
-       List Sections
-    ------------------------ */
-    .two-col-lists {
-      display: grid;
-      gap: 2rem;
-    }
+    /* CTA + FOOTER */
 
-    @media (min-width: 900px) {
-      .two-col-lists {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    /* -----------------------
-       CTA / Footer
-    ------------------------ */
     .cta-section {
       text-align: center;
     }
 
     .cta-section p {
-      max-width: 560px;
+      max-width: 580px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -442,135 +467,151 @@
     .cta-list {
       display: inline-block;
       text-align: left;
+      margin-top: 0.6rem;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
     }
 
     footer {
-      padding: 2rem 0 3rem;
-      font-size: 0.8rem;
+      padding: 2.2rem 0 3rem;
+      font-size: 0.78rem;
       color: #6b7280;
       text-align: center;
-    }
-
-    footer a {
-      color: #9ca3af;
-      text-decoration: underline;
-      text-decoration-style: dotted;
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <!-- Header -->
+    <!-- HEADER -->
     <header>
       <div class="container">
         <nav class="nav">
           <div class="logo">The Claim Program</div>
           <div class="nav-links">
-            <a href="#pain">Pain</a>
+            <a href="#pain">Problem</a>
             <a href="#method">Method</a>
             <a href="#who">Who It’s For</a>
-            <a href="#cta" class="nav-cta">Book Free Clarity Call</a>
+            <a href="#cta" class="nav-cta">Book Free Call</a>
           </div>
         </nav>
       </div>
     </header>
 
     <main>
-      <!-- HERO SECTION -->
+      <!-- HERO -->
       <section class="hero" id="top">
         <div class="container">
           <div class="hero-grid">
             <div>
               <div class="eyebrow">
                 <span class="eyebrow-dot"></span>
-                8-Week 1:1 Nervous System & Identity Work
+                8-Week 1:1 Social Rebuild Program
               </div>
               <h1 class="hero-title">
-                Stop Watching Your Life Pass By. Start Living It.
+                Break Out of <span>Isolation</span>.<br />Build a Real Social Life.
               </h1>
               <p class="hero-subtitle">
-                Rebuild self-trust. Break out of numbness. Become the person you know you’re meant to be.
+                For people who know they’re capable of more but can’t break through.
               </p>
               <p class="hero-body">
-                You’re not broken — you’re stuck in a cycle you were never taught to escape.
-                This 8-week 1:1 program helps you go from
-                <strong>paralyzed and in your head</strong> → <strong>grounded, confident, and actually living your life again.</strong>
+                If we’re honest: you spend way more time in your head and on your phone than in your actual life.
+                Your social life feels stuck on pause. You’re watching everyone else move while you sit in the same room,
+                running the same loops.
               </p>
+              <div class="hero-highlight">
+                In 8 weeks, The CLAIM Program helps you go from
+                <strong>isolated, numb, and ashamed of your life</strong>
+                → to
+                <strong>grounded, socially active, and actually present in your own life again.</strong>
+              </div>
 
               <div class="hero-actions">
-                <a href="#cta" class="btn-primary">→ Book a Free Clarity Call</a>
+                <a href="#cta" class="btn-primary">
+                  <span>→ Book a Free Breakthrough Call</span>
+                </a>
                 <div class="btn-secondary-text">
-                  No pressure. Just clarity on what’s really going on.
+                  We’ll map how to go from “alone in my head” to “I have people and plans again.”
                 </div>
               </div>
             </div>
 
             <aside class="hero-aside">
-              <div class="pill-tag">
-                <span class="pill-tag-dot"></span>
-                Designed for people who know they’re capable of more but can’t break through.
-
+              <div class="hero-aside-inner">
+                <div class="pill-tag">
+                  <span class="pill-tag-dot"></span>
+                  For people who know they’re capable of more but can’t break through
+                </div>
+                <h2 class="hero-aside-title">
+                  The CLAIM Program
+                </h2>
+                <p class="hero-aside-body">
+                  An 8-week 1:1 program for isolated young adults who feel stuck in their head, numb in their body, and
+                  ashamed of how small their life has become — and are ready to rebuild self-trust, reconnect with people,
+                  and re-enter life again.
+                </p>
+                <p class="hero-aside-note">
+                  No spiritual performance. No fake positivity. Just grounded nervous system work, honest conversations,
+                  and small bold actions that add up to a very different life.
+                </p>
               </div>
-              <h2 class="hero-aside-title">
-                The CLAIM Program — Rebuild Self-Trust and Re-Enter Your Life
-              </h2>
-              <p class="hero-aside-body">
-                An 8-week 1:1 container for people who feel stuck, numb, ashamed, or afraid — and are finally ready to rebuild self-trust and re-enter their life.
-              </p>
-              <p class="hero-aside-note">
-                This is not hype. It’s what happens when you change your internal relationship and nervous system, not just your to-do list.
-              </p>
             </aside>
           </div>
         </div>
       </section>
 
-      <!-- THE PAIN SECTION -->
+      <!-- PAIN -->
       <section id="pain">
         <div class="container two-col">
           <div>
-            <div class="section-label">The Pain</div>
+            <div class="section-label">The Problem</div>
             <h2 class="section-heading">
-              If you’re honest, you’ve been hiding from your own life.
+              You’ve built a life where it’s easier to stay in your head than in your life.
             </h2>
-            <p>You know what it feels like:</p>
+            <p>You know what isolation actually feels like:</p>
             <ul class="pill-list">
-              <li>You wake up numb, disconnected, repeating the same day on autopilot.</li>
-              <li>You’re terrified to take real action — so you avoid, distract, and wait.</li>
-              <li>You keep breaking promises to yourself, then feel ashamed about it.</li>
-              <li>Everyone else seems to be moving forward, while you’re stuck watching.</li>
-              <li>You feel like you’re living life as an observer instead of a participant.</li>
-              <li>The “dopamine nation” cycle gives you just enough relief to stay stuck.</li>
+              <li>Weekends alone, scrolling, waiting for someone else to invite you into their life.</li>
+              <li>Your real life is quiet, but your screen time is loud.</li>
+              <li>The idea of reaching out makes your chest tighten, so you don’t — again.</li>
+              <li>You keep making silent promises to “start next week”… and then you don’t.</li>
+              <li>You compare yourself to everyone else and feel permanently behind.</li>
+              <li>You feel like an observer in your own life instead of a participant.</li>
             </ul>
           </div>
           <div>
             <p>You don’t lack intelligence.</p>
             <p>You don’t lack potential.</p>
-            <p><strong>You lack self-trust — and without it, nothing changes.</strong></p>
+            <p>
+              <strong>You lack self-trust and social reps — and without those, nothing changes.</strong>
+            </p>
           </div>
         </div>
       </section>
 
-      <!-- THE TRUTH SECTION -->
+      <!-- TRUTH -->
       <section id="truth">
         <div class="container two-col">
           <div>
             <div class="section-label">The Truth</div>
             <h2 class="section-heading">
-              You’re not lazy. You’re not unmotivated. You’re stuck in a nervous system freeze.
+              You’re not “broken” or “anti-social”. You’re stuck in freeze and shame.
             </h2>
           </div>
           <div>
             <p>
-              When fear + shame stack together, your body shuts down.
-              Not because you’re weak — because you were never taught how to break out.
+              When you stack fear, shame, and years of isolation, your nervous system does the same thing every time:
+              it shuts you down to keep you safe.
             </p>
-            <p>But you can.<br />And you will.</p>
+            <p>
+              So you keep the same routines, open the same apps, share the same memes — and call it “rest” while quietly
+              hating yourself for not living.
+            </p>
+            <p>This is a pattern, not your personality.</p>
+            <p>You can break it.<br />And you don’t have to do it alone.</p>
           </div>
         </div>
       </section>
 
-      <!-- THE TRANSFORMATION SECTION -->
+      <!-- TRANSFORMATION -->
       <section id="transformation">
         <div class="container">
           <div class="section-label">The Transformation</div>
@@ -578,137 +619,146 @@
           <div class="two-col-lists">
             <div>
               <ul>
-                <li>You wake up calm, grounded, and clear instead of anxious or numb.</li>
-                <li>You do what you say you’ll do — without negotiating with yourself.</li>
-                <li>You take action even when you’re scared because you finally trust yourself.</li>
+                <li>You wake up with actual plans on your calendar, not “maybe I’ll do something.”</li>
+                <li>You have a small group of people you can text and hang with — for real.</li>
+                <li>You walk into rooms calmer, grounded, not obsessing over how you’re being perceived.</li>
               </ul>
             </div>
             <div>
               <ul>
-                <li>You express who you are instead of hiding behind fear.</li>
-                <li>You stop comparing yourself to others because you finally feel enough.</li>
-                <li>You start LIVING again — not drifting through your life.</li>
+                <li>You stop ghosting your own life — you show up to what you say yes to.</li>
+                <li>You feel less like a background character and more like the main character again.</li>
+                <li>You’re not just “working on yourself” — you’re actually living.</li>
               </ul>
             </div>
           </div>
           <p>
             This isn’t hype.<br />
-            This is what happens when someone helps you change your internal relationship.
+            This is what happens when you change your internal relationship <em>and</em> your behavior in the real world.
           </p>
         </div>
       </section>
 
-      <!-- THE SOLUTION SECTION -->
+      <!-- SOLUTION -->
       <section id="solution">
         <div class="container two-col">
           <div>
             <div class="section-label">The Solution</div>
             <h2 class="section-heading">Introducing The CLAIM Program</h2>
             <p class="section-subheading">
-              8 Weeks • 1:1 • Designed for people who are terrified to live their life
+              8 Weeks • 1:1 • For isolated young adults who are ready to finally re-enter life.
             </p>
           </div>
           <div>
             <p>This program is built for one purpose:</p>
             <p>
               <strong>
-                To take someone who feels stuck, numb, ashamed, or afraid — and give them the inner stability and confidence required to move again.
+                To take someone who is isolated, numb, ashamed, and stuck in their head — and give them the self-trust,
+                emotional stability, and social reps required to build a real life again.
               </strong>
             </p>
             <p>No therapy jargon.</p>
-            <p>No spiritual bypassing.</p>
-            <p>No fake positivity.</p>
-            <p>Just grounded inner work + action.</p>
+            <p>No spiritual performance.</p>
+            <p>No “just think positive.”</p>
+            <p>Just honest inner work + real-world action.</p>
           </div>
         </div>
       </section>
 
-      <!-- THE METHOD SECTION -->
+      <!-- METHOD -->
       <section id="method">
         <div class="container">
           <div class="section-label">The Method</div>
           <h2 class="section-heading">The CLAIM Method</h2>
           <p class="section-subheading">
-            A 4-pillar system to help you break numbness, rebuild self-trust, and re-enter your life.
+            A 4-pillar system to break isolation, rebuild self-trust, and re-enter your social life.
           </p>
 
           <div class="method-grid">
             <div class="method-step">
               <h3>1. Reveal</h3>
-              <p>We uncover the real reason you’re stuck.</p>
-              <p>You’ll gain clarity you’ve never had before.</p>
+              <p>We get brutally honest about how you ended up here — without shaming you.</p>
+              <p>You’ll finally see the real pattern behind your isolation.</p>
             </div>
             <div class="method-step">
               <h3>2. Regulate</h3>
-              <p>We shift your nervous system out of freeze so you can actually function again.</p>
-              <p>You’ll feel grounded, calm, and capable.</p>
+              <p>We shift your nervous system out of constant freeze so social situations stop feeling life-threatening.</p>
+              <p>You’ll feel more grounded, calm, and present in your body.</p>
             </div>
             <div class="method-step">
               <h3>3. Rewire</h3>
-              <p>We break shame loops, dissolve inferiority, and rebuild your internal identity.</p>
-              <p>This is where confidence grows naturally.</p>
+              <p>We break shame loops and dissolve the “I’m behind / I’m not enough” story.</p>
+              <p>Your identity shifts from “the isolated one” to “someone who belongs.”</p>
             </div>
             <div class="method-step">
-              <h3>4. Claim (Action)</h3>
-              <p>Small, meaningful actions that rebuild self-trust.</p>
-              <p>Not overwhelm — identity-building steps that change who you are.</p>
+              <h3>4. Re-Enter</h3>
+              <p>Small, strategic social actions every week — messages, invites, events — that rebuild your social life.</p>
+              <p>No fake extroversion. Just you, finally back in the game.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- WHAT’S INCLUDED -->
+      <!-- WHAT'S INCLUDED -->
       <section id="included">
         <div class="container">
-          <div class="section-label">What’s Included</div>
-          <h2 class="section-heading">What You Get Inside The CLAIM Program</h2>
+          <div class="section-label">What You Get</div>
+          <h2 class="section-heading">What’s Inside The CLAIM Program</h2>
           <div class="two-col-lists">
             <div>
               <div class="card">
                 <h3 class="card-title">8 Weekly 1:1 Calls</h3>
-                <p>Deep conversation, clarity extraction, and nervous system work.</p>
+                <p>Deep conversation, nervous system work, and clear decision-making each week.</p>
               </div>
               <div class="card">
                 <h3 class="card-title">Daily Voice + Text Support</h3>
-                <p>You’re not doing this alone. Real-time correction and accountability.</p>
+                <p>Real-time support when you’re about to bail, spiral, or hide again.</p>
               </div>
               <div class="card">
                 <h3 class="card-title">Personalized Inner-Work Practice</h3>
-                <p>Tailored exercises for your emotional state, not generic worksheets.</p>
+                <p>Simple practices to calm your system and stop living in your head 24/7.</p>
               </div>
             </div>
             <div>
               <div class="card">
-                <h3 class="card-title">A Clear Action Strategy</h3>
-                <p>Small, strategically chosen actions that rebuild self-trust fast.</p>
+                <h3 class="card-title">Weekly Social Reps Plan</h3>
+                <p>Concrete actions: who to text, where to go, what to say — based on your life, not a template.</p>
               </div>
               <div class="card">
-                <h3 class="card-title">Full Transformation Roadmap</h3>
-                <p>So you don’t just improve — you become someone new.</p>
+                <h3 class="card-title">Full Social Re-Entry Roadmap</h3>
+                <p>
+                  A clear path from “alone with my phone” to “I have a real social life again” — so you know what to keep
+                  doing after the 8 weeks.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- WHO THIS IS FOR -->
+      <!-- WHO IT'S FOR -->
       <section id="who">
         <div class="container two-col">
           <div>
             <div class="section-label">Who This Is For</div>
             <h2 class="section-heading">You’re a fit if:</h2>
             <ul>
-              <li>You feel stuck, numb, or terrified to take action</li>
-              <li>You live in your head</li>
-              <li>You avoid discomfort</li>
-              <li>You want confidence, peace, and purpose</li>
-              <li>You know you’re capable of more but can’t break the cycle</li>
-              <li>You’re ready for inner work AND real-world action</li>
+              <li>You feel isolated, numb, or terrified to actually live your life.</li>
+              <li>You spend most of your time in your head or online.</li>
+              <li>You avoid discomfort and then hate yourself for avoiding it.</li>
+              <li>You want real friends, real experiences, and real confidence.</li>
+              <li>You know you’re capable of more but can’t break the cycle alone.</li>
+              <li>You’re willing to do inner work <em>and</em> take real-world action.</li>
             </ul>
           </div>
           <div>
             <p>
-              If you want hand-holding, coddling, or spiritual performance, this is not for you.
+              If you want someone to coddle you, tell you it’s “all divine timing,” or keep you in ideas with no action,
+              this is not for you.
+            </p>
+            <p>
+              If you’re done watching your life from the sidelines and are ready to actually participate — this is exactly
+              for you.
             </p>
           </div>
         </div>
@@ -720,7 +770,7 @@
           <div>
             <div class="section-label">Why Me</div>
             <h2 class="section-heading">
-              I lost years of my life to fear, numbness, and avoidance.
+              I lost years of my life to isolation, numbness, and avoidance.
             </h2>
             <p>
               I lived as an observer — not a participant.<br />
@@ -728,14 +778,14 @@
             </p>
           </div>
           <div>
-            <p>My strengths aren’t theoretical.<br />They’re lived:</p>
+            <p>My strengths aren’t theoretical. They’re lived:</p>
             <ul>
-              <li>Grounded presence</li>
-              <li>Emotional stability</li>
-              <li>Non-judgmental confidence</li>
-              <li>Ability to make anyone feel seen</li>
-              <li>Pulling clarity out of people instantly</li>
-              <li>Helping people regulate just by being with them</li>
+              <li>Grounded presence that calms people down.</li>
+              <li>Emotional stability when you’re spiraling.</li>
+              <li>Non-judgmental confidence — nothing you say will shock me.</li>
+              <li>Ability to make anyone feel seen and understood.</li>
+              <li>Pulling clarity out of people instantly.</li>
+              <li>Helping people regulate just by being with them.</li>
             </ul>
             <p>
               People feel safe, understood, and activated around me — and that’s the foundation of real transformation.
@@ -749,55 +799,55 @@
         <div class="container two-col">
           <div>
             <div class="section-label">The Investment</div>
-            <h2 class="section-heading">This isn’t a course.</h2>
-            <p>This is not “accountability.”</p>
-            <p>This is not motivation.</p>
+            <h2 class="section-heading">This isn’t “just talking.”</h2>
+            <p>This isn’t a course you never finish.</p>
+            <p>This isn’t motivational hype.</p>
             <p>
-              This is <strong>inner rewiring</strong> and <strong>identity reconstruction</strong>.
+              This is <strong>inner rewiring</strong>, <strong>nervous system work</strong>, and
+              <strong>real-world social action</strong>.
             </p>
           </div>
           <div>
-            <p><strong>Investment: $2,000 </strong></p>
-            <p><br />Spots limited.</p>
+            <p><strong>Investment: $1,500 – $2,500 (depending on support level)</strong></p>
+            <p>Payment plans available.<br />Spots limited.</p>
           </div>
         </div>
       </section>
 
-      <!-- CALL TO ACTION -->
+      <!-- CTA -->
       <section id="cta" class="cta-section">
         <div class="container">
           <div class="section-label">Call to Action</div>
-          <h2 class="section-heading">Ready to stop watching your life pass by?</h2>
-          <p class="section-subheading">Book your free Clarity Call.</p>
+          <h2 class="section-heading">Ready to stop living your life from the sidelines?</h2>
+          <p class="section-subheading">Book your free Breakthrough Call.</p>
 
-          <p>
-            On this call, we’ll:
-          </p>
+          <p>On this call, we’ll:</p>
           <ul class="cta-list">
-            <li>Diagnose the REAL reason you’re stuck</li>
-            <li>Map out an 8-week plan to rebuild your self-trust</li>
-            <li>See if The CLAIM Program is the right fit</li>
+            <li>Get honest about why you’re really isolated right now.</li>
+            <li>Map out an 8-week plan to rebuild your social life and self-trust.</li>
+            <li>See if The CLAIM Program is the right fit — with no pressure.</li>
           </ul>
 
-          <p>No pressure. No sales gimmicks.<br />Just clarity — the thing you’ve been missing.</p>
+          <p>No scripts. No sales games.<br />Just clarity and a real plan.</p>
 
-          <div class="hero-actions" style="justify-content: center; margin-top: 2rem;">
-            <!-- Replace the href with your real booking link (Calendly, SavvyCal, etc.) -->
-            <a href="https://calendly.com/catalystofshame/30min" class="btn-primary">
-              → Book Your Free Clarity Call
+          <div class="hero-actions" style="justify-content: center; margin-top: 1.8rem;">
+            <!-- Put your real Calendly link here -->
+            <a href="https://calendly.com/your-link-here" class="btn-primary">
+              <span>→ Book Your Free Breakthrough Call</span>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- OPTIONAL SOCIAL PROOF -->
+      <!-- SOCIAL PROOF -->
       <section id="social-proof">
         <div class="container">
-          <div class="section-label">Social Proof</div>
+          <div class="section-label">Why This Exists</div>
           <div class="card">
             <p>
-              “I wasted years standing on the sidelines of my own life. The moment I rebuilt self-trust, everything changed.
-              I created this program to give people the shortcut I wish I had.”
+              “I wasted years standing on the sidelines of my own life. The moment I rebuilt self-trust and started
+              taking small social risks, everything changed. I created this program to give people the shortcut I wish I
+              had.”
             </p>
           </div>
         </div>
@@ -812,7 +862,6 @@
   </div>
 
   <script>
-    // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
